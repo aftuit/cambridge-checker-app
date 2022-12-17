@@ -1,15 +1,14 @@
-const staticColorPicker = "dasturUz11";
+const staticColorPicker = "dasturUz12";
 // let isUpdateAvailable = false;
 
 const assets = [
     "/",
-    // "/index.html",
-    "/offline.html",
+    "/index.html",
     "/css/bootstrap.css",
     "/css/main.css",
-    // "/js/bootstrap.js",
-    // "/js/main.js",
-    // "/js/data.js",
+    "/js/bootstrap.js",
+    "/js/main.js",
+    "/js/data.js",
     "/images/complete.png",
     "/images/warn.png",
     "/images/wrong.png",
@@ -28,6 +27,7 @@ caches.delete("dasturUz7").then(() => {});
 caches.delete("dasturUz8").then(() => {});
 caches.delete("dasturUz9").then(() => {});
 caches.delete("dasturUz10").then(() => {});
+caches.delete("dasturUz11").then(() => {});
 // caches.delete("dasturUz11").then(() => {});
 
 

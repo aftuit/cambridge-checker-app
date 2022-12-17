@@ -63,6 +63,15 @@ button.start-button:focus-visible,
     background-color: #540872;
     box-shadow: none;
 }
+.btn-primary1{
+    background-color: #12B886;
+}
+.btn-danger1{
+    background-color: #F75151;
+}
+.btn-update{
+    background-color: #7950F2;
+}
 /* .navbar-toggler{
     position: relative;
 }

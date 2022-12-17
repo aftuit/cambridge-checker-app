@@ -235,6 +235,7 @@ btn.addEventListener("click", () => {
   buttonCheck.type = "submit";
   buttonCheck.classList.add("btn");
   buttonCheck.classList.add("btn-primary");
+  buttonCheck.classList.add("btn-primary1");
   buttonCheck.classList.add("d-block");
   buttonCheck.classList.add("my-2");
   buttonCheck.classList.add("mx-auto");
@@ -247,6 +248,7 @@ btn.addEventListener("click", () => {
   buttonCancel.classList.add("btn-block");
   buttonCancel.classList.add("w-100");
   buttonCancel.classList.add("btn-danger");
+  buttonCancel.classList.add("btn-danger1");
   buttonCancel.classList.add("d-block");
   buttonCancel.classList.add("mb-3");
   buttonCheck.innerHTML = "Check";
