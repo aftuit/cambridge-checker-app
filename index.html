@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link
+      rel="apple-touch-icon"
+      href="images/icons/android-launchericon-72-72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="images/icons/android-launchericon-96-96.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="images/icons/android-launchericon-144-144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="images/icons/android-launchericon-192-192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="images/icons/android-launchericon-512-512.png"
+    />
+    <meta name="theme-color" content="#0D1117" />
+    <meta name="description" content="Cambridge TEST checker application">
+    <meta name="keywords" content="Cambridge, Reading, Listening, checking, examining">
+    <meta name="author" content="Farrux Aktamov">
+    <title>Cambridge answer checker</title>
+  </head>
+  <body>
+    <div class="container filter-container" id="filter-container">
+      <div class="row" id="filter">
+        <div class="col-md-4 col-sm-6 col-12">
+          <select
+            id="number"
+            class="form-control-plaintext border mt-3 rounded border-2"
+          >
+            <option value="7">Cambridge 7</option>
+            <option value="8">Cambridge 8</option>
+            <option value="9">Cambridge 9</option>
+            <option value="10">Cambridge 10</option>
+            <option value="11">Cambridge 11</option>
+            <option value="12">Cambridge 12</option>
+            <option value="13">Cambridge 13</option>
+            <option value="14">Cambridge 14</option>
+            <option value="15">Cambridge 15</option>
+            <option value="16">Cambridge 16</option>
+            <option value="17">Cambridge 17</option>
+          </select>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12">
+          <select
+            id="test-number"
+            class="form-control-plaintext border mt-3 rounded border-2"
+          >
+            <option value="testOne">Test 1</option>
+            <option value="testTwo">Test 2</option>
+            <option value="testThree">Test 3</option>
+            <option value="testFour">Test 4</option>
+          </select>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12">
+          <select
+            name="test-type"
+            id="test-type"
+            class="form-control-plaintext border mt-3 rounded border-2"
+          >
+            <option value="listening">Listening</option>
+            <option value="reading">Reading</option>
+          </select>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12">
+          <select
+            name="passage-number"
+            id="passage"
+            class="d-none form-control-plaintext border mt-3 rounded border-2"
+          >
+            <option value="0">Passage 1</option>
+            <option value="1">Passage 2</option>
+            <option value="2">Passage 3</option>
+            <option value="3">All passages</option>
+          </select>
+        </div>
+      </div>
+        <nav class="navbar navbar-dark ms-auto">
+          <div class="w-100">
+            <button
+              class="navbar-toggler border ms-auto d-block px-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapsibleNavbar"
+              id="collapse-btn"
+            >
+              <img src="images/down.png" class="w-25" alt="" id="down-img" />
+              <!-- <span class="isupdateavailable" id="showupdateavailable"></span> -->
+            </button>
+  
+            <div
+              class="shadow collapse navbar-collapse border rounded mt-2 p-2 text-center"
+              id="collapsibleNavbar"
+            >
+              <div class="mt-2">
+                If there are any problems or uncertainties, please contact us on
+                <a href="https://t.me/Farrux_Aktamov">Telegram</a>
+              </div>
+              <button class="btn btn-primary mt-5 px-3 fw-bolder" id="update-btn">
+                UPDATE
+              </button>
+              <!-- <span class="d-block text-success small" id="info-updates"
+                >There are some updates available! <br />
+                Please, update the app</span -->
+              <!-- > -->
+            </div>
+          </div>
+        </nav>
+       <span class="fst-italic text-info">Test rejimida ishlamoqda 1111 ... </span>
+      <div class="mt-auto">
+        <button
+          type="button"
+          id="btn"
+          class="btn btn-success btn-block d-block w-100 mx-auto mb-3 mt-2 start-button"
+        >
+          Start
+        </button>
+      </div>
+    </div>
+    <div class="container container-result mx-auto" id="container-result">
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        class="bg-dark position-relative bd-example-toasts"
+        id="toast-content-id"
+      >
+        <div
+          class="toast-container bg-white position-fixed p-3 top-0 start-50 translate-middle-x"
+          id="toastPlacement"
+          data-original-class="toast-container p-3"
+        >
+          <div class="toast fade" id="toast-wrap">
+            <div class="toast-header">
+              <img src="/images/warn.png" alt="!" class="img me-2" />
+              <strong class="me-auto">Result</strong>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+                id="toast-closer"
+              ></button>
+            </div>
+            <div class="toast-body">
+              <div class="m d-flex align-items-center justify-content-between">
+                <p class="mb-0">
+                  Correct: <b class="display-inline-block ms-1" id="true"></b>
+                </p>
+                <img src="/images/complete.png" alt="!" class="img ms-2" />
+              </div>
+              <div
+                class="mt-3 d-flex align-items-center justify-content-between"
+              >
+                <p class="mb-0">
+                  Wrong: <b class="display-inline-block ms-1" id="wrong"></b>
+                </p>
+                <img src="/images/wrong.png" alt="!" class="img ms-2" />
+              </div>
+              <div class="border w-100 my-2"></div>
+              <div class="switch-holder">
+                <div class="switch-label d-flex align-items-center">
+                  <img src="/images/checks.png" class="w-25" alt="" />
+                  <span class="d-inline-block ms-1">Show List</span>
+                </div>
+                <div class="switch-toggle">
+                  <input type="checkbox" id="showList" />
+                  <label for="showList"></label>
+                </div>
+              </div>
+              <div id="wrong-ans-wrapper" class="wrong-ans-wrapper">
+                <div class="border w-100 my-2"></div>
+                <b class="text-danger d-none" id="wrong-ans-show"
+                  >Wrong answers: <i id="wrongAnsIndex"></i
+                ></b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-2 d-none filter-result-wrappper" id="filter-result">
+        <h5 class="fw-bold">
+          <i>
+            Cambridge <span id="check_camb_numb">11</span> <br />
+            Test <span id="check_test_numb">10</span> <br />
+            <span id="check_test_type">Reading passage 3</span>
+          </i>
+        </h5>
+      </div>
+      <form action="" id="checkAnswers">
+        <div class="" id="inputs"></div>
+      </form>
+    </div>
+
+    <script src="js/bootstrap.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/data.js"></script>
+  </body>
+</html>
