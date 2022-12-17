@@ -1,4 +1,4 @@
-const staticColorPicker = "dasturUz12";
+const staticColorPicker = "dasturUz14";
 // let isUpdateAvailable = false;
 
 const assets = [
@@ -28,7 +28,8 @@ caches.delete("dasturUz8").then(() => {});
 caches.delete("dasturUz9").then(() => {});
 caches.delete("dasturUz10").then(() => {});
 caches.delete("dasturUz11").then(() => {});
-// caches.delete("dasturUz11").then(() => {});
+caches.delete("dasturUz12").then(() => {});
+caches.delete("dasturUz13").then(() => {});
 
 
 self.addEventListener("install", installEvent => {
